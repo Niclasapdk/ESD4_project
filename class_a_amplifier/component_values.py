@@ -9,8 +9,8 @@ hfe = 270  # transistor current amplification
 IC = 5e-3
 V_activation = 0.7  # transistor "turn on" voltage
 
-# Calculate load resistor RL
-RL = Vcc / Iq
+# Calculate collector resistor RC
+RC = Vcc / Iq
 
 # Calculate emitter voltage VE
 VE = 0.12 * Vcc  # should be about 10% to 15% of Vcc
@@ -50,7 +50,7 @@ print(f"VB\t= {round(VB, 3)} V")
 print(f"IB\t= {round(IB*1e6, 3)} uA")
 print(f"Ibias\t= {round(Ibias*1e6, 3)} uA")
 print("Components")
-print(f"RL\t= {round(RL*1e-3, 3)} kOhm")
+print(f"RC\t= {round(RC*1e-3, 3)} kOhm")
 print(f"RE\t= {round(RE, 3)} Ohm")
 print(f"R1\t= {round(R1*1e-3, 3)} kOhm")
 print(f"R2\t= {round(R2*1e-3, 3)} kOhm")
