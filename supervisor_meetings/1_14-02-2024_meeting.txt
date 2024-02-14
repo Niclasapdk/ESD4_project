@@ -1,0 +1,22 @@
+Our current progress:
+Instead of darlington, we can design inverted darlingtons instead which is used to reduce the required cooling.
+
+Which direction will the project go in:
+See picture (It is important to make a good filter (High degree) parting the bass and discant)
+
+What does supervisor think of problemanalysis:
+-Before meeting we think that an introduction + a section about the different classes of amplifiers will do
+
+There is not a lot of standard with the requirements.
+Sounds okay with the scope of the problemanalysis.
+
+
+
+We should probably analyse the different voltage and current amplifications of each box (Input stage, VAS and Output stage).
+
+
+We can make an mdf board with nails and solder the components on it, to test our circuit.
+
+
+
+Supervisor meeting friday, where we will learn how to do transistor
