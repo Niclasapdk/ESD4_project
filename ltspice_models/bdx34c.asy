@@ -3,11 +3,12 @@ SymbolType BLOCK
 LINE Normal -32 24 -32 -25
 LINE Normal -32 0 -48 0
 LINE Normal 0 32 -32 9
-LINE Normal -16 -21 -32 -9
-LINE Normal -10 -32 -16 -21
-LINE Normal -5 -24 -10 -32
-LINE Normal -16 -21 -5 -24
-LINE Normal 0 -32 -7 -28
+LINE Normal 0 -32 0 -32
+LINE Normal -20 -18 0 -32
+LINE Normal -23 -21 -20 -18
+LINE Normal -32 -9 -23 -21
+LINE Normal -17 -15 -32 -9
+LINE Normal -20 -18 -17 -15
 WINDOW 3 16 16 Left 2
 SYMATTR Value BDX34C
 SYMATTR Prefix QN
