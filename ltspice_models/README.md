@@ -16,6 +16,8 @@ ln -s $(pwd)/bdx33c.lib ~/.wine/drive_c/users/$USER/Documents/LTspiceXVII/lib/su
 ln -s $(pwd)/bdx34c.lib ~/.wine/drive_c/users/$USER/Documents/LTspiceXVII/lib/sub/bdx34c.lib
 ```
 
+### windows
+
 ```sh
 mklink %cd%\bdx33c.asy %userprofile%\Documents\LTspiceXVII\lib\sym\bdx33c.asy
 mklink %cd%\bdx34c.asy %userprofile%\Documents\LTspiceXVII\lib\sym\bdx34c.asy
