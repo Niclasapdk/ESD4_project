@@ -9,7 +9,7 @@ LINE Normal -14 22 -11 18
 LINE Normal 0 -32 -32 -10
 LINE Normal -32 0 -48 0
 WINDOW 3 16 16 Left 2
-SYMATTR Prefix QN
+SYMATTR Prefix X
 SYMATTR Value BDX33C
 SYMATTR ModelFile bdx33c.lib
 PIN 0 -32 NONE 8
