@@ -1,0 +1,52 @@
+* Z:\home\markus\uni\ESD4_project\class_ab_amplifier\classABThreeStage.asc
+Q_W2 N014 N014 P001 0 BC547B
+Q_W1 N013 N014 P002 0 BC547B
+R_WE1 P002 Vcc- 200
+R_WE2 P001 Vcc- 200
+Q_W3 ops_pnp N013 N014 0 BC547B
+R_W N013 0 3k
+R_VBE2 N005 ops_pnp 1k
+R_VBE1 ops_npn N005 4k
+Q_VBE ops_npn N005 ops_pnp 0 BC547B
+R_load out 0 8
+V1 Vcc- 0 -30
+V2 Vcc+ 0 30
+V3 N017 0 AC 1
+XU1 Vcc+ ops_npn N003 BDX33C
+XU2 Vcc- ops_pnp N011 BDX34C
+R1 N003 out 0.5
+R2 out N011 0.5
+Q1 N004 N007 N010 0 BC547B
+Q2 N001 N008 N010 0 BC547B
+Q3 N004 N001 Vcc+ 0 BC557B
+Q4 N001 N001 Vcc+ 0 BC557B
+Q5 ops_npn N004 N002 0 BC557B
+R3 out N008 12.4k
+R4 N008 N018 1k
+C1 N018 0 16.5µ
+R5 N004 N009 150
+C2 ops_npn N009 220p
+R6 Vcc+ N002 50
+V4 in 0 SINE(0 1 1k) AC 1
+Q6 N010 N012 N016 0 BC547B
+Q7 N012 N012 N015 0 BC547B
+R7 N012 0 10k
+R8 N015 Vcc- 5k
+R9 N016 Vcc- 5k
+C3 N007 N006 3.3µ
+R10 N007 0 120k
+R11 N006 in 1k
+.model NPN NPN
+.model PNP PNP
+.lib C:\users\markus\Documents\LTspiceXVII\lib\cmp\standard.bjt
+;.ac dec 0.005 1 100k
+* VBE-Multiplier
+* Feedback Network
+* Voltage Amplification Stage (VAS)
+* Input Stage
+* Output Stage
+.tran 5m
+.lib bdx33c.lib
+.lib bdx34c.lib
+.backanno
+.end
