@@ -4,7 +4,7 @@ from matplotlib.ticker import EngFormatter
 
 # Enter all values in ISQ
 
-def fmt_unit(var, unit, col=12):
+def fmt_unit(var, unit, col=20):
     formatter = EngFormatter(unit=unit)
     num = globals()[var]
     return var.ljust(col, " ") + "= " + formatter(num)
@@ -12,39 +12,61 @@ def fmt_unit(var, unit, col=12):
 # Choose these constants
 Vcc = 30
 R_load = 8
-P_load_rms = 15
+P_rms = 15
 hfe = 1e3  # Output Stage Darlington HFE
 TJ_max = 80  # max transistor temperature
 TA = 20  # ambient temperature
 print("Chosen values")
 print(fmt_unit("Vcc", "V"))
 print(fmt_unit("R_load", "Ohm"))
-print(fmt_unit("P_load_rms", "W RMS"))
+print(fmt_unit("P_rms", "W RMS"))
 print(fmt_unit("hfe", ""))
 print(fmt_unit("TJ_max", "degree Celsius"))
 print(fmt_unit("TA", "degree Celsius"))
 
 print("Power Calculations")
-P_load = sqrt(2) * P_load_rms
-V_load = sqrt(2 * P_load * R_load)
-print(fmt_unit("P_load", "W"))
-print(fmt_unit("V_load", "V"))
-V_load += 0.5  # add 0.5V for headroom
-P_load = (V_load ** 2) / (2 * R_load)
-I_load = V_load / R_load
-print("After adding headroom")
-print(fmt_unit("V_load", "V"))
-print(fmt_unit("P_load", "W"))
-print(fmt_unit("I_load", "A"))
+I_rms = sqrt(P_rms/R_load)
+V_rms = P_rms/I_rms
+print(fmt_unit("I_rms", "A"))
+print(fmt_unit("V_rms", "V"))
+
+print("Peak values")
+P_peak = sqrt(2) * P_rms
+I_peak = sqrt(2) * I_rms
+V_peak = sqrt(2) * V_rms
+print(fmt_unit("P_peak", "W"))
+print(fmt_unit("I_peak", "A"))
+print(fmt_unit("V_peak", "V"))
+
+# print("Power Calculations")
+# V_peak = sqrt(sqrt(2) * P_rms * R_load)
+# P_peak = sqrt(2) * V_load
+# I_peak = V_load / R_load
+# print(fmt_unit("P_peak", "W"))
+# print(fmt_unit("V_peak", "V"))
+# print(fmt_unit("I_peak", "A"))
+# print("After adding headroom")
+# V_headroom = V_peak + 0.5
+# P_rms_headroom = (V_headroom ** 2) / (sqrt(2) * R_load)
+# I_headroom = V_headroom / R_load
+# P_headroom = sqrt(2) * P_rms_headroom
+# print(fmt_unit("P_rms_headroom", "W RMS"))
+# print(fmt_unit("P_headroom", "W"))
+# print(fmt_unit("V_headroom", "V"))
+# print(fmt_unit("I_headroom", "A"))
 
 print("Efficiency Calculations")
-Pcc = (2/pi) * V_load * Vcc / R_load
+# Pcc = (2/pi) * V_peak * Vcc / R_load
+# print(fmt_unit("Pcc", "W"))
+Pcc = Vcc * I_rms
 print(fmt_unit("Pcc", "W"))
 Pd_max = 2 * Vcc**2 / (pi**2 * R_load)
 print(fmt_unit("Pd_max", "W"))
+efficiency = 100*P_rms / Pcc # in percent
+print(fmt_unit("efficiency", "%"))
 
 print("Transistor Calculations")
-I_base = I_load / hfe
+I_base = I_peak / hfe
 print(fmt_unit("I_base", "A"))
 
 print("Thermal examination (max values)")
