@@ -35,10 +35,8 @@ print(fmt_unit("I_rms", "A"))
 print(fmt_unit("V_rms", "V"))
 
 print(headline("Peak values"))
-P_peak = sqrt(2) * P_rms
 I_peak = sqrt(2) * I_rms
 V_peak = sqrt(2) * V_rms
-print(fmt_unit("P_peak", "W"))
 print(fmt_unit("I_peak", "A"))
 print(fmt_unit("V_peak", "V"))
 
