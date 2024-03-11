@@ -76,23 +76,13 @@ Theta_SA = (TJ_max - TA) / Pd_max
 print(fmt_unit("Theta_SA", "degree Celsius / W"))
 
 print(headline("Input stage emitter resistors"))
-Iinp_c1_l = 980e-6
-Iinp_c2_l = 970e-6
-Iinp_c1_h = 1.96e-3
-Iinp_c2_h = 1.96e-3
-Rinp_1_l = 25e-3 / Iinp_c1_l
-Rinp_2_l = 25e-3 / Iinp_c2_l
-Rinp_1_h = 25e-3 / Iinp_c1_h
-Rinp_2_h = 25e-3 / Iinp_c2_h
-Rinp_1 = Rinp_1_l - Rinp_1_h
-Rinp_2 = Rinp_2_l - Rinp_2_h
-print(fmt_unit("Iinp_c1_l", "A"))
-print(fmt_unit("Iinp_c2_l", "A"))
-print(fmt_unit("Iinp_c1_h", "A"))
-print(fmt_unit("Iinp_c2_h", "A"))
-print(fmt_unit("Rinp_1_l", "Ohm"))
-print(fmt_unit("Rinp_2_l", "Ohm"))
-print(fmt_unit("Rinp_1_h", "Ohm"))
-print(fmt_unit("Rinp_2_h", "Ohm"))
-print(fmt_unit("Rinp_1", "Ohm"))
-print(fmt_unit("Rinp_2", "Ohm"))
+Iinp_cl = 630e-6
+Iinp_ch = 1.26e-3
+Rinp_l = 25e-3 / Iinp_cl
+Rinp_h = 25e-3 / Iinp_ch
+Rinp = Rinp_l - Rinp_h
+print(fmt_unit("Iinp_cl", "A"))
+print(fmt_unit("Iinp_ch", "A"))
+print(fmt_unit("Rinp_l", "Ohm"))
+print(fmt_unit("Rinp_h", "Ohm"))
+print(fmt_unit("Rinp", "Ohm"))
