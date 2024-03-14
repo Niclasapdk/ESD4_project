@@ -1,6 +1,7 @@
 ---
 title: Dali 2A speaker impedance measurement
 author: ESD4-410
+date: 13/03/2024
 ---
 
 # Purpose
