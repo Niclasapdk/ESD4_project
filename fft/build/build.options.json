@@ -1,0 +1,10 @@
+{
+  "additionalFiles": "",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "esp32:esp32:esp32doit-devkit-v1:UploadSpeed=115200,DebugLevel=none,FlashFreq=80,EraseFlash=none",
+  "hardwareFolders": "/home/fred441a/.arduino15/packages",
+  "otherLibrariesFolders": "/home/fred441a/Arduino/libraries",
+  "sketchLocation": "/home/fred441a/Documents/Uni/4ESD/project/fft"
+}

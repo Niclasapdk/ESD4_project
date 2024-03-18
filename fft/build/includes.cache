@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/variants/doitESP32devkitV1"
+  },
+  {
+    "Sourcefile": "/home/fred441a/Documents/Uni/4ESD/project/fft/build/sketch/fft.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
