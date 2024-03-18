@@ -84,7 +84,7 @@ GenerateClassCluster=0
 DocumentUniqueId=GESZLTFM
 
 [Document3]
-DocumentPath=eqVcPcb.PcbDoc
+DocumentPath=equalizerAndVoltageControl.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -98,7 +98,24 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=TNAXOKVS
+DocumentUniqueId=
+
+[Document4]
+DocumentPath=eqVc.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=PREAPWRB
 
 [Configuration1]
 Name=Sources
