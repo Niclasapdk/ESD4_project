@@ -4,11 +4,13 @@
 
 > RIAA equalisation accuracy:
 
-2%
+$\pm 0.1$ dB
 
 > Input impedance:
 
 47k ohms resistor (per standard?)
+
+And a wack capacitor?
 
 > Input voltage:
 
@@ -16,13 +18,15 @@
 
 > Output voltage:
 
-30dB at 1kHz $\approx 158.1Vrms$
+30dB at 1kHz $\approx 147.7mVrms$
 
 > RIAA output gain factor to professional audio:
 
-$1.228\:V_{RMS} = 158.1\:mV_{rms}\cdot x \Longleftrightarrow x = 7.767 [\cdot]$
+$1.228\:V_{RMS} = 147.7\:mV_{rms}\cdot x \Longleftrightarrow x = 8.3 [\cdot]$
 
 > Output impedance:
+
+Dunno
 
 > THD: Unknown
 
@@ -44,21 +48,24 @@ yes
 
 >The 3 additional time constants for infrasonic and sonic filtering and IEC amementment:
 
-* $T_1 = 7950E-6\:s$ with freq of f1: $20.02Hz = 1/(T_1 \cdot 2 \cdot \pi)$
+* $T_1 = 2.48\:s$ with freq of f1: $20.02Hz = 1/(T_1 \cdot 2 \cdot \pi)$
     * Infrasonic
-* $T_2 = 7950E-6\:s$ with freq of f2: $20.02Hz = 1/(T_2 \cdot 2 \cdot \pi)$
+* $T_2 = 7.95E-3\:s$ with freq of f2: $20.02Hz = 1/(T_2 \cdot 2 \cdot \pi)$
     * IEC amendment fixed value
-* $T_6 = 75E-6\:s$ with freq of f6: $2122.1Hz = 1/(T_6 \cdot 2 \cdot \pi)$
+* $T_6 = 2.40E-6\:s$ with freq of f6: $2122.1Hz = 1/(T_6 \cdot 2 \cdot \pi)$
     * Sonic
 
 > RIAA output amplifier:
 
 Non inverting amplifier:
 
-Gain(Av) = $\frac{V_{out}}{V_{in}}=-\frac{R_f}{R_{in}}$
+Gain(Av) = -$\frac{V_{out}}{V_{in}}=-\frac{R_f}{R_{in}}$
 
-Required known gain: $7.767 = -\frac{R_f}{R_{in}}$
+Required known gain: $8.3 = -\frac{R_f}{R_{in}}$
 
 Due to component restrictions $R_f$ is chosen to be 47.5k since $R_5$ is in series with the amplifier the final equation is:
 
-$7.767 = -\frac{47.7k}{2k\: + \: x} \Longleftrightarrow x = 4.4k\Omega $
+$8.3 = -\frac{R_f}{100k\Omega} \Longleftrightarrow R_{f} = 830k\Omega $
+
+
+Increase these two resistors with a factor of 10 to increase the impedance of the amplifier.
