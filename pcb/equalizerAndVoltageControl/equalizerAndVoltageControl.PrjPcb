@@ -101,7 +101,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document4]
-DocumentPath=eqVc.PcbDoc
+DocumentPath=eqVcVersion1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -134,27 +134,48 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document6]
+DocumentPath=eqVcVersion2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=EICXOESQ
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for equalizerAndVoltageControl\Design Rule Check - eqVc.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Copper_Signal_Bot.gbr
+DocumentPath=Project Outputs for equalizerAndVoltageControl\Design Rule Check - eqVcVersion2.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Copper_Signal_Top.gbr
+DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Copper_Signal_Bot.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_NPTH_Drill.gbr
+DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Copper_Signal_Top.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Profile.gbr
+DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_NPTH_Drill.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument6]
+DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_Profile.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument7]
 DocumentPath=Project Outputs for equalizerAndVoltageControl\eqVc_PTH_Drill.gbr
 DItemRevisionGUID=
 
