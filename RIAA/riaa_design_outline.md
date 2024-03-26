@@ -10,7 +10,7 @@ $\pm 0.1$ dB
 
 47k ohms resistor (per standard?)
 
-And a wack capacitor?
+And a capacitor?
 
 > Input voltage:
 
@@ -18,11 +18,11 @@ And a wack capacitor?
 
 > Output voltage:
 
-30dB at 1kHz $\approx 147.7mVrms$
+30dB at 1kHz $\approx 158.1mVrms$ with 5 mVrms.
 
 > RIAA output gain factor to professional audio:
 
-$1.228\:V_{RMS} = 147.7\:mV_{rms}\cdot x \Longleftrightarrow x = 8.3 [\cdot]$
+$1.228\:V_{RMS} = 158.1\:mV_{rms}\cdot x \Longleftrightarrow x = 7.76 [\cdot]$
 
 > Output impedance:
 
@@ -61,11 +61,12 @@ Non inverting amplifier:
 
 Gain(Av) = -$\frac{V_{out}}{V_{in}}=-\frac{R_f}{R_{in}}$
 
-Required known gain: $8.3 = -\frac{R_f}{R_{in}}$
+Required known gain: $7.76 = -\frac{R_f}{R_{in}}$
 
-Due to component restrictions $R_f$ is chosen to be 47.5k since $R_5$ is in series with the amplifier the final equation is:
+Due to restrictions the $R_{in}$ is chosen to be $147k\Omega$
 
-$8.3 = -\frac{R_f}{100k\Omega} \Longleftrightarrow R_{f} = 830k\Omega $
+$7.76 = -\frac{1.21M}{R_1} \Longleftrightarrow R_{1} = 155.9k\Omega $
 
+Since it is in series with with the 2k the final resistor for $R_1$ should be $154k\Omega$
 
-Increase these two resistors with a factor of 10 to increase the impedance of the amplifier.
+From here the final gain is $\frac{1.21E6}{154E3+2E3} = 7.756$
