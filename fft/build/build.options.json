@@ -1,5 +1,5 @@
 {
-  "additionalFiles": "",
+  "additionalFiles": "../..",
   "builtInToolsFolders": "",
   "compiler.optimization_flags": "-Os",
   "customBuildProperties": "build.warn_data_percentage=75",

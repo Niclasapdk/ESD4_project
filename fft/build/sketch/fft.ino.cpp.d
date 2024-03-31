@@ -131,4 +131,12 @@
  /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash_counters.h \
  /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32/io_pin_remap.h \
- /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32/Arduino.h
+ /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32/Arduino.h \
+ /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/driver/include/driver/adc.h \
+ /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/tools/sdk/esp32/include/hal/include/hal/adc_types.h \
+ /home/fred441a/Arduino/libraries/U8g2/src/U8g2lib.h \
+ /home/fred441a/.arduino15/packages/esp32/hardware/esp32/2.0.14/cores/esp32/Print.h \
+ /home/fred441a/Arduino/libraries/U8g2/src/U8x8lib.h \
+ /home/fred441a/Arduino/libraries/U8g2/src/clib/u8x8.h \
+ /home/fred441a/Arduino/libraries/U8g2/src/clib/u8g2.h \
+ /home/fred441a/Arduino/libraries/U8g2/src/clib/u8x8.h
