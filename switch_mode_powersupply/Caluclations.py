@@ -1,3 +1,4 @@
+# https://www.ti.com/lit/an/slva477b/slva477b.pdf?ts=1711517988809
 # The bigger the coil the higher the henry the more max power can be drawn from the switching regulator
 
 import math
@@ -10,7 +11,7 @@ nano = math.pow(10,-9)
 Vout = 5
 Vin = 30
 Imax = 200*milli
-efficience = 0.9
+efficience = 0.60
 
 max_duty_cycle = Vout/(Vin*efficience)
 
@@ -28,9 +29,9 @@ max_fq = 1/(rise_time+fall_time)
 print(f"max switching frequency {max_fq}Hz")
 
 #define the wanted switching speed, this should just be below the max
-min_fq = max_fq - 500*kilo
+min_fq = 50*kilo#max_fq - 500*kilo
 
-print(f"max fq: {min_fq}Hz")
+print(f"fq: {min_fq}Hz")
 
 # inductor size
 L =  (Vout*(Vin-Vout))/(inductor_ripple_current*min_fq*Vin)
