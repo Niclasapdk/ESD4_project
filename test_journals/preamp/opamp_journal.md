@@ -5,7 +5,6 @@
 * Affirm the THD of the system. 
 * Validate input and output impedance is in accordance with requirements.
 
-
 ## Method
 
 
