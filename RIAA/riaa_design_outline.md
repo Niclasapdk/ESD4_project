@@ -4,7 +4,7 @@
 
 > RIAA equalisation accuracy:
 
-$\pm 0.1$ dB
+$\pm 1$ ? dB
 
 > Input impedance:
 
@@ -70,3 +70,4 @@ $7.76 = -\frac{1.21M}{R_1} \Longleftrightarrow R_{1} = 155.9k\Omega $
 Since it is in series with with the 2k the final resistor for $R_1$ should be $154k\Omega$
 
 From here the final gain is $\frac{1.21E6}{154E3+2E3} = 7.756$
+
