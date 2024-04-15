@@ -19,8 +19,9 @@ snr:
 
 ### Frequency responce
 
+![](oscilloscope_data/class_a_freq_response_l.png)
 
+
+![](oscilloscope_data/class_a_freq_response_r.png)
 
 ## Conclusion
-
-the best around ツ

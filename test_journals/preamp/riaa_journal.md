@@ -15,9 +15,13 @@ Input Z:
 Output Z:
 snr:
 
-### Frequency responce
+### Frequency response
 
+Output from RIAA and inverting opamp
 
+![](oscilloscope_data/riaa_freq_response_l.png)
+
+![](oscilloscope_data/riaa_freq_response_r.png)
 
 ## Conclusion
 
