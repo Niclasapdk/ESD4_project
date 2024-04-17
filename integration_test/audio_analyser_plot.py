@@ -58,9 +58,9 @@ sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
 sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
 
 # Customize matplotlib font settings
-plt.rc('font', size=14)  # Sets the default font size
-plt.rc('axes', titlesize=20)  # Font size of the axes title
-plt.rc('axes', labelsize=14)  # Font size of the x and y labels
+plt.rc('font', size=10)  # Sets the default font size
+plt.rc('axes', titlesize=14)  # Font size of the axes title
+plt.rc('axes', labelsize=10)  # Font size of the x and y labels
 
 # Create a plot to demonstrate the style
 fig, ax = plt.subplots()
