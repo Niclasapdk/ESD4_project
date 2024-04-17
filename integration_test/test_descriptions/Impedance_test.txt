@@ -1,0 +1,16 @@
+For testing impedance from the different elements, the same test were made for each element.
+The test utilized an NI-PCI-4461 audioanalyzer, and the program "Swept Sine FRF VI"
+The analysis was made from 20Hz-20kHz which is well below its limits of 92kHz.
+We used AO0 which is a signal generator as well as AI0, which was connected to the signal generator, measuring the output, and AI1 which measured the output from the element being tested.
+To set up the test, AO0 is connected with a T-connector to AI0 and a resistor (above 600 ohm 1 kohm where used in the test) connected in series with the elements input.
+Then the elements output is connected to AI1.
+Then by comparing the signal read on AI0 and AI1, the audioanalyzer does an analysis on the elements effect on the signal.
+It is important to set the output to ao0 in the program, as well as setting the two inputs as ai0 and ai1.
+Then sampling frequency is sat to 204800 Hz, which is the maximum. (The default of 50 kHz, is not sufficient, as it can not make a proper fourier transform from the recording.
+Then the range is sat depending on the elements expected output size, so that the output is within the range.
+10 settle cycles and integration cycles were used, choosing a higher value will not do a lot for this part.
+Then the test is run, the results are checked, for any clear errors, and the frequency response output saved as a tsv file.
+Then a test is run, where the element is disconnected, and it is only the resistor, with AO0 connected to one side and AI1 to the other, and the same test is run, getting a frequency response from the resistor.
+Then the matlab script (XXX) is run, getting the input impedance.
+
+NI-PCI-4461 datasheet: https://www.ni.com/pdf/products/us/pxi4461.pdf
