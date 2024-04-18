@@ -1,0 +1,36 @@
+SNR tested at 5kHz for the EQ and 1kHz for everything else
+FFT is used in the span of 20Hz-20kHz, to get the meassure.
+The oscilloscope can max
+REQMax signal = -19.4 dB
+REQMax noise = -65 dB
+REQMax SNR = 45.6 dB
+LEQMax signal = -19.0 dB
+LEQMax noise = -65 dB
+LEQMax SNR = 46 dB
+LRIAA+OPAMP signal = -25 dB
+LRIAA+OPAMP noise = -48 dB
+LRIAA+OPAMP SNR = 23 dB
+RRIAA+OPAMP signal = -24.9 dB
+RRIAA+OPAMP noise = -48 dB
+RRIAA+OPAMP SNR = 23.1 dB
+LRIAA signal = -42 dB
+LRIAA noise = -65 dB
+LRIAA SNR = 23 dB
+RRIAA signal = -42 dB
+RRIAA noise = -65 dB
+RRIAA SNR = 23 dB
+RPreAmpOPAMP signal = -22 dB
+RPreAmpOPAMP noise = -62 dB
+RPreAmpOPAMP SNR = 40 dB
+LPreAmpOPAMP signal = -62 dB
+LPreAmpOPAMP noise = -22 dB
+LPreAmpOPAMP SNR = 40 dB
+RClassA signal = -21.6 dB
+RClassA noise = -62 dB
+RClassA SNR = 40.4 dB
+LClassA signal = -21.6 dB
+LClassA noise = -63 dB
+LClassA SNR = 41.4 dB
+
+Because of the Oscilloscopes resolution, it is not possible to get readings of more than 50 dB difference.
+Since we are trying to get the most pessimistic values, this ends up being around 40-45 dB SNR each time.
