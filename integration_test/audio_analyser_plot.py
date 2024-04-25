@@ -9,6 +9,7 @@ parser.add_argument("--title", help="Plot title", default="Plot Title")
 parser.add_argument("--type", help="Plot type", choices=["thd", "freqresp"])
 parser.add_argument("--outfile", help="Generated figure output filename (.png)", default=None)
 parser.add_argument("--quiet", help="Do not display generated figure", default=False, action="store_true")
+parser.add_argument("--logx", help="Make x-axis logarithmic", default=False, action="store_true")
 parser.add_argument("--autodetect", help="Automatically detect filenames", default=False, action="store_true")
 args = parser.parse_args()
 
@@ -67,6 +68,8 @@ fig, ax = plt.subplots()
 plt.title(title)
 plt.xlabel(xlabel)
 plt.ylabel(ylabel)
+if args.logx:
+    ax.set_xscale("log")
 ax.plot(df_L[x_tsv_column].to_numpy(), df_L[y_tsv_column].to_numpy(), label="Left Channel")
 ax.plot(df_R[x_tsv_column].to_numpy(), df_R[y_tsv_column].to_numpy(), label="Right Channel")
 

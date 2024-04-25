@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cwd=$(pwd)
 dirs=(\
@@ -32,6 +32,6 @@ for ((i=0; i<length; i++)); do
     echo THD plot
     python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "thd_${dir//\//_}.png" --title "${title} THD" --type "thd"
     echo FreqResp plot
-    python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "freqresp_${dir//\//_}.png" --title "${title} Frequency Response" --type "freqresp"
+    python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "freqresp_${dir//\//_}.png" --title "${title} Frequency Response" --type "freqresp" --logx
     popd >/dev/null
 done
