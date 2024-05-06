@@ -12,8 +12,7 @@ parser.add_argument("--title", help="Plot title", default="Plot Title")
 parser.add_argument("--r-series", help="Series Resistor Value", default=1e3, type=int)
 parser.add_argument("--outfile", help="Generated figure output filename (.png)", default=None)
 parser.add_argument("--quiet", help="Do not display generated figure", default=False, action="store_true")
-parser.add_argument("--logx", help="Make x-axis logarithmic", default=True, action="store_true")
-parser.add_argument("--logy", help="Make y-axis logarithmic", default=True, action="store_true")
+parser.add_argument("--loglog", help="Make log-log plot", default=False, action="store_true")
 parser.add_argument("--autodetect", help="Automatically detect filenames", default=False, action="store_true")
 args = parser.parse_args()
 
@@ -69,7 +68,6 @@ def calculate_Zi_sweep(Rseries, df, df_ref):
         ZiDUT = calculate_Zi(Zboth, Zai1)
         RiDUTs.append(ZiDUT.real)
         XiDUTs.append(ZiDUT.imag)
-        print(Zboth, Zai1, ZiDUT)
     return (np.asarray(RiDUTs), np.asarray(XiDUTs))
 
 (Ri_L, Xi_L) = calculate_Zi_sweep(args.r_series, df_L, df_ref)
@@ -94,12 +92,11 @@ plt.xlabel(xlabel)
 #plt.ylabel(ylabel)
 ax1.set_ylabel("Real part [Ohm]")
 ax2.set_ylabel("Imaginary part [Ohm]")
-if args.logx:
+if args.loglog:
     ax1.set_xscale("log")
-    ax2.set_xscale("log")
-if args.logy:
     ax1.set_yscale("log")
-    ax2.set_yscale("log")
+    ax2.set_xscale("log")
+    ax2.set_yscale("symlog")
 ax1.plot(df_L[x_tsv_column].to_numpy(), Ri_L, label="Left Channel")
 ax1.plot(df_R[x_tsv_column].to_numpy(), Ri_R, label="Right Channel")
 ax2.plot(df_L[x_tsv_column].to_numpy(), Xi_L, label="Left Channel")
