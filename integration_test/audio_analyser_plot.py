@@ -8,6 +8,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--title", help="Plot title", default="Plot Title")
 parser.add_argument("--type", help="Plot type", choices=["thd", "freqresp"])
 parser.add_argument("--outfile", help="Generated figure output filename (.png)", default=None)
+parser.add_argument("--simfile", help="Simulation data (LTSpice polar text output)", default=None)
+parser.add_argument("--calfile", help="Theoretical data (csv)", default=None)
 parser.add_argument("--quiet", help="Do not display generated figure", default=False, action="store_true")
 parser.add_argument("--logx", help="Make x-axis logarithmic", default=False, action="store_true")
 parser.add_argument("--autodetect", help="Automatically detect filenames", default=False, action="store_true")
@@ -47,6 +49,12 @@ def read_and_filter_tsv_file(filename):
         temp_file.writelines(lines)
         temp_file.seek(0)  # Go back to the start of the file
         return pd.read_csv(temp_file, sep='\t', header=0)
+
+def read_ltspice_simdata(filename):
+    df = pd.read_csv(filename, sep='\t', header=0)
+    complex_in = df["V(in)"].apply(lambda x: complex(*map(float, x.split(','))))
+    complex_out = df["V(out)"].apply(lambda x: complex(*map(float, x.split(','))))
+    return pd.DataFrame({"in": complex_in, "out": complex_out})
 
 df_L = read_and_filter_tsv_file(filename_L)
 df_R = read_and_filter_tsv_file(filename_R)
