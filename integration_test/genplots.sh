@@ -24,15 +24,15 @@ titles=(\
     "RIAA with preamp"\
 )
 args=(\
+    "--simfile simulation_data.txt"\
     ""\
     ""\
     ""\
-    ""\
-    ""\
-    ""\
-    ""\
-    "--calfile calculation_data.csv"\
-    ""\
+    "--simfile simulation_data.txt"\
+    "--simfile simulation_data.txt"\
+    "--simfile simulation_data.txt"\
+    "--simfile simulation_data.txt --calfile calculation_data.csv"\
+    "--simfile simulation_data.txt"\
 )
 length=${#dirs[@]}
 for ((i=0; i<length; i++)); do
@@ -40,7 +40,7 @@ for ((i=0; i<length; i++)); do
     title=${titles[i]}
     arg=${args[i]}
     echo "# $title"
-    pushd $dir >/dev/null
+    pushd $dir >/dev/null || continue
     echo THD plot
     python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "thd_${dir//\//_}.png" --title "${title} THD" --type "thd"
     echo FreqResp plot

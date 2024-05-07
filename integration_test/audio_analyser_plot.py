@@ -1,3 +1,4 @@
+from math import log10
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -53,9 +54,8 @@ def read_and_filter_tsv_file(filename):
 
 def read_ltspice_simdata(filename):
     df = pd.read_csv(filename, sep='\t', header=0)
-    complex_in = df["V(in)"].apply(lambda x: complex(*map(float, x.split(','))))
     complex_out = df["V(out)"].apply(lambda x: complex(*map(float, x.split(','))))
-    return pd.DataFrame({"f": df["Freq."], "in": complex_in, "out": complex_out, "outampl": complex_out.apply(lambda x: abs(x))})
+    return pd.DataFrame({"f": df["Freq."], "out": complex_out, "outampl": complex_out.apply(lambda x: 20*log10(abs(x)))})
 
 df_L = read_and_filter_tsv_file(filename_L)
 df_R = read_and_filter_tsv_file(filename_R)
