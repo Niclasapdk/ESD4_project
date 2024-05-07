@@ -11,4 +11,4 @@ s(1).LineWidth = 1.4;
 s(2).LineWidth = 1.4;
 legend({'Line Level Gain Stage','RIAA stage'},'FontSize',16);
 set(gca,'FontSize',16);
-grid on
+grid on;
