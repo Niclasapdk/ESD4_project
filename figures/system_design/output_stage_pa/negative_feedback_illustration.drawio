@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-09T09:13:34.834Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="-u6_aIGu06_W2-fbckNK" version="24.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-09T09:16:10.422Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="vKenCvRj6S8OoD1-Vz_U" version="24.3.1" type="github">
   <diagram name="Page-1" id="milYkLg96uxCiUISAmhT">
     <mxGraphModel dx="635" dy="331" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
@@ -33,7 +33,7 @@
         <mxCell id="NcG4sBHDOAafFcYKclui-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="NcG4sBHDOAafFcYKclui-7" target="NcG4sBHDOAafFcYKclui-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NcG4sBHDOAafFcYKclui-7" value="&lt;div&gt;$$\beta$$&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxCell id="NcG4sBHDOAafFcYKclui-7" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;$$\beta$$&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="440" y="240" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="NcG4sBHDOAafFcYKclui-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="NcG4sBHDOAafFcYKclui-12" target="NcG4sBHDOAafFcYKclui-3" edge="1">
