@@ -1,11 +1,12 @@
-# Input Impedance
+# THD and Frequency Response
 
 ## Purpose
 
-Measure the input impedance of all subsystems to determine whether they comply with the requirements.
+Measure the THD and frequency response of all subsystems to determine whether they comply with the requirements.
 
 ## Equipment
 
+- NI-PCI-4461 audio analyzer
 - Analog Discovery 2 (footnote)
 - Hameg HM7042 power supply
 - DUT
