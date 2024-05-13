@@ -44,5 +44,7 @@ for ((i=0; i<length; i++)); do
     python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "freqresp_${dir//\//_}.png" --title "${title} Frequency Response" --type "freqresp" --logx $arg
     echo Input Impedance plot
     python3 $cwd/input_impedance_analogdiscovery.py --autodetect --quiet --outfile "zi_${dir//\//_}.png" --title "${title} Input Impedance" --logx
+    echo Output Impedance plot
+    python3 $cwd/output_impedance_analogdiscovery.py --autodetect --quiet --outfile "zo_${dir//\//_}.png" --title "${title} Output Impedance" --logx
     popd >/dev/null
 done

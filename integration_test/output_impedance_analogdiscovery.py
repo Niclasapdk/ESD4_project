@@ -30,7 +30,7 @@ title = args.title               # Plot title
 x_csv_column = "Frequency (Hz)"           # TSV file column name of x_axis (case sensitive)
 xlabel = "Frequency [Hz]"        # x axis label
 y_csv_column = "Channel 1 Magnitude (dB)"         # TSV file column name of y_axis (case sensitive)
-ylabel = "Impedance (real part) [Ohm]"           # y axis label
+ylabel = "Impedance [Ohm]"           # y axis label
 # data filenames
 data_L = []
 data_R = []
@@ -64,8 +64,9 @@ def zo(fs, a1s, a2s, r1, r2):
         zo[i] = x[1]
     return zo
 
-assert len(data_L) == 2, "2 data files were not found L channel"
-assert len(data_R) == 2, "2 data files were not found R channel"
+if len(data_L) != 2 or len(data_R) != 2:
+    print("Not enough data files")
+    exit()
 
 f = data_R[0][0][x_csv_column]
 assert f.all() == data_R[1][0][x_csv_column].all(), "frequency step in data not the same"
