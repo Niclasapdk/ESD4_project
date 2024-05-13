@@ -4,7 +4,6 @@ cwd=$(pwd)
 dirs=(\
     "boom_boom"\
     "eq_volctrl/pot_max"\
-    "eq_volctrl/pot_mid"\
     "eq_volctrl/pot_min"\
     "power_amplifier"\
     "preamp_class_a"\
@@ -15,7 +14,6 @@ dirs=(\
 titles=(\
     "HiFi Amplifier"\
     "EQ and VC (max)"\
-    "EQ and VC (mid)"\
     "EQ and VC (min)"\
     "Power Amplifier"\
     "Class A Preamp"\
@@ -25,7 +23,6 @@ titles=(\
 )
 args=(\
     "--simfile simulation_data.txt"\
-    ""\
     ""\
     ""\
     "--simfile simulation_data.txt"\
