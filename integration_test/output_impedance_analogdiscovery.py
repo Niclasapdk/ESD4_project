@@ -38,7 +38,6 @@ if args.autodetect:
     for name in os.listdir("."):
         if name.startswith("zo"):
             if name.endswith("k.csv"):
-                print(name)
                 expr = name.split("_")[-1].split(".")[0].replace("k", "e3")
                 rseries = int(ast.parse(expr, mode='eval').body.n)
                 df = read_and_filter_csv_file(name)
