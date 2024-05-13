@@ -5,6 +5,7 @@ dirs=(\
     "boom_boom"\
     "eq_volctrl/pot_max"\
     "eq_volctrl/pot_min"\
+    "eq_volctrl"\
     "power_amplifier"\
     "preamp_class_a"\
     "preamp_opamp"\
@@ -15,6 +16,7 @@ titles=(\
     "HiFi Amplifier"\
     "EQ and VC (max)"\
     "EQ and VC (min)"\
+    "EQ and VC"\
     "Power Amplifier"\
     "Class A Preamp"\
     "Opamp Preamp"\
@@ -23,6 +25,7 @@ titles=(\
 )
 args=(\
     "--simfile simulation_data.txt"\
+    ""\
     ""\
     ""\
     "--simfile simulation_data.txt"\
