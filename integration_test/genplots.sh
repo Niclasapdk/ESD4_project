@@ -25,8 +25,8 @@ titles=(\
 )
 args=(\
     "--simfile simulation_data.txt"\
-    ""\
-    ""\
+    "--simfile simulation_data.txt"\
+    "--simfile simulation_data.txt"\
     ""\
     "--simfile simulation_data.txt"\
     "--simfile simulation_data.txt"\
