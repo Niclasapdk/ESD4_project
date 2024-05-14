@@ -1,5 +1,4 @@
 import pandas as pd
-import seaborn as sns
 import numpy as np
 import sys
 
@@ -16,7 +15,10 @@ figs = [
 ("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
 ("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
 ("pa_stability/open_loop_test.txt", "Open loop test", "f"),
-("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f")
+("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f"),
+("auxPreAmp/ClassAPreAmp.txt", "Class A Preamp Transient Response", "t"),
+("equalizer/equaliserMax.txt", "EQ Frequency Response (max)", "f"),
+("equalizer/equaliserMin.txt", "EQ Frequency Response (min)", "f")
 ]
 
 def csv_to_df(filename):
@@ -43,6 +45,8 @@ def parse_vout(vout: pd.Series):
 
 def gentransient(filename, title, save=False, quiet=False):
     import matplotlib.pyplot as plt
+    import seaborn as sns
+    plt.figure()
     outfile = filename.replace(".txt", ".png")
     df = csv_to_df(filename)
     t = df["time"].to_numpy()
@@ -66,6 +70,8 @@ def gentransient(filename, title, save=False, quiet=False):
 
 def genfreq(filename, title, save=False, quiet=False):
     import matplotlib.pyplot as plt
+    import seaborn as sns
+    plt.figure()
     outfile = filename.replace(".txt", ".png")
     df = csv_to_df(filename)
     f = df["Freq."]
