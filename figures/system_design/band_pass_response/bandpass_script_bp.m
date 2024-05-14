@@ -15,7 +15,7 @@ y2 = degree;
 p1 = semilogx(x,y2,'--');
 p1.LineWidth = 3;
 xlabel('Frequency [Hz]');
-ylabel('Degree [°]','Interpreter','latex');
+ylabel('Phase [°]','Interpreter','latex');
 title('Bandpass Response');
 ax = gca; 
 ax.FontSize = 14;
