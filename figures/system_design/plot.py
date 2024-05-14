@@ -12,11 +12,11 @@ if len(sys.argv) > 1:
         save = True
 
 figs = [
-("closed_loop_test.txt", "Closed Loop Test", "f"),
-("closed_loop_transient.txt", "Closed Loop Transient", "t"),
-("closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
-("open_loop_test.txt", "Open loop test", "f"),
-("open_loop_with_miller.txt", "Open loop with miller", "f")
+("pa_stability/closed_loop_test.txt", "Closed Loop Test", "f"),
+("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
+("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
+("pa_stability/open_loop_test.txt", "Open loop test", "f"),
+("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f")
 ]
 
 def csv_to_df(filename):
@@ -94,6 +94,7 @@ def genfreq(filename, title, save=False, quiet=False):
         plt.show()
 
 def genplot(filename, title, save=False, quiet=False, type="f"):
+    print(filename.replace(".txt", ".png"))
     if type == "f":
         genfreq(filename, title, save=save, quiet=quiet)
     if type == "t":
