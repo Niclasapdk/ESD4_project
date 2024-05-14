@@ -16,7 +16,7 @@ def headline(txt):
 # Choose these constants
 Vcc = 30
 R_load = 8
-P_rms = 15
+P_rms = 35
 hfe = 1e3  # Output Stage Darlington HFE
 TJ_max = 80  # max transistor temperature
 TA = 20  # ambient temperature
