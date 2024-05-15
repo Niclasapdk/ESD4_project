@@ -18,7 +18,8 @@ figs = [
 ("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f"),
 ("auxPreAmp/ClassAPreAmp.txt", "Class A Preamp Transient Response", "t"),
 ("equalizer/equaliserMax.txt", "EQ Frequency Response (max)", "f"),
-("equalizer/equaliserMin.txt", "EQ Frequency Response (min)", "f")
+("equalizer/equaliserMin.txt", "EQ Frequency Response (min)", "f"),
+("volume_control/volume_control.txt","Volume control steps","t")
 ]
 
 def csv_to_df(filename):
