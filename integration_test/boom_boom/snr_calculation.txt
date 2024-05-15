@@ -1,0 +1,7 @@
+This is the python calculation for the total system SNR
+
+>>> from math import log10
+>>> signal = 18.5
+>>> nosignal = 12.9e-3
+>>> 20*log10(signal/nosignal)
+63.1316403620753
