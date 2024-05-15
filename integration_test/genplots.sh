@@ -42,7 +42,7 @@ for ((i=0; i<length; i++)); do
     echo "# $title"
     pushd $dir >/dev/null || continue
     echo THD plot
-    python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "thd_${dir//\//_}.png" --title "${title} THD" --type "thd"
+    python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "thd_${dir//\//_}.png" --title "${title} THD" --type "thd" --logx
     echo FreqResp plot
     python3 $cwd/audio_analyser_plot.py --autodetect --quiet --outfile "freqresp_${dir//\//_}.png" --title "${title} Frequency Response" --type "freqresp" --logx $arg
     echo Input Impedance plot

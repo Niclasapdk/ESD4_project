@@ -92,6 +92,7 @@ def genfreq(filename, title, save=False, quiet=False):
     ax2.plot(f, phase)
     ax1.set_xscale("log")
     ax2.set_xscale("log")
+    ax2.set_yticks(np.arange(-180, 181, 45))
     plt.grid(True)  # Show grid
     plt.tight_layout()
     fig.tight_layout()
