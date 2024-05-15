@@ -11,6 +11,7 @@ if len(sys.argv) > 1:
         save = True
 
 figs = [
+("unregulated_powersupply/unregulated_supply_rails.txt", "Unregulated Power Supply", "t"),
 ("pa_stability/closed_loop_test.txt", "Closed Loop Test", "f"),
 ("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
 ("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
@@ -51,7 +52,7 @@ def gentransient(filename, title, save=False, quiet=False):
     outfile = filename.replace(".txt", ".png")
     df = csv_to_df(filename)
     t = df["time"].to_numpy()
-    V = df["V(out)"].to_numpy()
+    Vs = df.filter(regex='^V', axis=1)
     sns.set(style="whitegrid")  # You can change the style to "darkgrid", "whitegrid", etc.
     sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
     sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
@@ -61,7 +62,8 @@ def gentransient(filename, title, save=False, quiet=False):
     plt.title(title)
     plt.xlabel("Time [s]")
     plt.ylabel("Voltage [V]")
-    plt.plot(t, V)
+    for V in Vs.columns:
+        plt.plot(t, Vs[V], label=V)
     plt.grid(True)  # Show grid
     plt.tight_layout()
     if save:
