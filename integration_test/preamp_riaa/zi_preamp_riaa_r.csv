@@ -12,7 +12,7 @@
 #ProbeCapacitance: 4.3e-11 F
 #Compensation:none
 #Wavegen: Wavegen1
-#Amplitude: 0.029 V
+#Amplitude: 0.03 V
 #Offset: 0 V
 #Amplification: 1 X
 #Settle: 0.01 s
