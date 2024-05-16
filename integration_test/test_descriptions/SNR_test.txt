@@ -1,6 +1,0 @@
-The SNR test were made with a Keysight DSOX1102G oscilloscope.
-First the signal generator was connected to the first channel on the oscilloscope and the input of the element, with a T-connector.
-Then the output of the element were connected to the second channel of the oscilloscope.
-The input was a 1 kHz signal of the maximum input voltage, with the expecption of the equalizer, for which a 5 kHz signal was used (This is the frequency with the highest gain).
-Then an FFT of the output were measured for in dB, and compared with the noise which was the output when the input was turned of.
-To get the SNR the signal value were subtracted with the noise value.

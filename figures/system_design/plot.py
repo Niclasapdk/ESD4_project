@@ -11,6 +11,7 @@ if len(sys.argv) > 1:
         save = True
 
 figs = [
+("unregulated_powersupply/unregulated_supply_rails.txt", "Unregulated Power Supply", "t"),
 ("pa_stability/closed_loop_test.txt", "Closed Loop Test", "f"),
 ("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
 ("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
@@ -19,7 +20,7 @@ figs = [
 ("auxPreAmp/ClassAPreAmp.txt", "Class A Preamp Transient Response", "t"),
 ("equalizer/equaliserMax.txt", "EQ Frequency Response (max)", "f"),
 ("equalizer/equaliserMin.txt", "EQ Frequency Response (min)", "f"),
-("volume_control/volume_control.txt","Volume control steps","t")
+("volume_control/volume_control.txt","Volume Control Transient Response","ts")
 ]
 
 def csv_to_df(filename):
@@ -51,7 +52,7 @@ def gentransient(filename, title, save=False, quiet=False):
     outfile = filename.replace(".txt", ".png")
     df = csv_to_df(filename)
     t = df["time"].to_numpy()
-    V = df["V(out)"].to_numpy()
+    Vs = df.filter(regex='^V', axis=1)
     sns.set(style="whitegrid")  # You can change the style to "darkgrid", "whitegrid", etc.
     sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
     sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
@@ -61,7 +62,57 @@ def gentransient(filename, title, save=False, quiet=False):
     plt.title(title)
     plt.xlabel("Time [s]")
     plt.ylabel("Voltage [V]")
-    plt.plot(t, V)
+    for V in Vs.columns:
+        plt.plot(t, Vs[V], label=V)
+    plt.grid(True)  # Show grid
+    plt.tight_layout()
+    if save:
+        plt.savefig(outfile, dpi=300)  # Save as PNG file with high DPI
+    if not quiet:
+        plt.show()
+
+def step_csv_to_df_list(filename):
+    import tempfile
+    out = []
+    with open(filename, "rb") as f:
+        lines = f.readlines()
+    header = lines[0]
+    i = 2
+    run = 1
+    while True:
+        if i >= len(lines):
+            return out
+        cur_lines = [header]
+        for j, l in enumerate(lines[i:]):
+            i += 1
+            if b"Step Information" in l:
+                run += 1
+                i += 1
+                break
+            else:
+                cur_lines.append(l)
+        cur_lines = list(map(lambda b: b.decode(), cur_lines))
+        with tempfile.TemporaryFile(mode='w+t') as temp_file:
+            temp_file.writelines(cur_lines)
+            temp_file.seek(0)  # Go back to the start of the file
+            out.append(pd.read_csv(temp_file, sep='\t', header=0))
+
+def gentransientstep(filename, title, save=False, quiet=False):
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    plt.figure()
+    outfile = filename.replace(".txt", ".png")
+    dfs = step_csv_to_df_list(filename)
+    sns.set(style="whitegrid")  # You can change the style to "darkgrid", "whitegrid", etc.
+    sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
+    plt.rc('font', size=14)  # Sets the default font size
+    plt.rc('axes', titlesize=14)  # Font size of the axes title
+    plt.rc('axes', labelsize=10)  # Font size of the x and y labels
+    plt.title(title)
+    plt.xlabel("Time [s]")
+    plt.ylabel("Voltage [V]")
+    for df in dfs:
+        plt.plot(df["time"], df["V(out)"])
     plt.grid(True)  # Show grid
     plt.tight_layout()
     if save:
@@ -107,6 +158,8 @@ def genplot(filename, title, save=False, quiet=False, type="f"):
         genfreq(filename, title, save=save, quiet=quiet)
     if type == "t":
         gentransient(filename, title, save=save, quiet=quiet)
+    if type == "ts":
+        gentransientstep(filename, title, save=save, quiet=quiet)
 
 for fig in figs:
     genplot(fig[0], fig[1], type=fig[2], save=save, quiet=quiet)
