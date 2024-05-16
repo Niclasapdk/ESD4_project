@@ -13,6 +13,7 @@ parser.add_argument("--title", help="Plot title", default="Plot Title")
 parser.add_argument("--outfile", help="Generated figure output filename (.png)", default=None)
 parser.add_argument("--quiet", help="Do not display generated figure", default=False, action="store_true")
 parser.add_argument("--logx", help="Make x-axis logarithmic", default=False, action="store_true")
+parser.add_argument("--logy", help="Make y-axis logarithmic", default=False, action="store_true")
 parser.add_argument("--autodetect", help="Automatically detect filenames", default=False, action="store_true")
 args = parser.parse_args()
 
@@ -30,7 +31,7 @@ title = args.title               # Plot title
 x_csv_column = "Frequency (Hz)"           # TSV file column name of x_axis (case sensitive)
 xlabel = "Frequency [Hz]"        # x axis label
 y_csv_column = "Trace |Z| (Ohm)"         # TSV file column name of y_axis (case sensitive)
-ylabel = "Impedance [Ohm]"           # y axis label
+ylabel = "Impedance [kOhm]"           # y axis label
 # data filenames
 df_L = df_R = None
 if args.autodetect:
@@ -77,8 +78,10 @@ plt.xlabel(xlabel)
 plt.ylabel(ylabel)
 if args.logx:
     ax.set_xscale("log")
-ax.plot(f, df_L[y_csv_column].to_numpy(), label="Left Channel")
-ax.plot(f, df_R[y_csv_column].to_numpy(), label="Right Channel")
+if args.logy:
+    ax.set_yscale("log")
+ax.plot(f, df_L[y_csv_column].to_numpy()/1e3, label="Left Channel")
+ax.plot(f, df_R[y_csv_column].to_numpy()/1e3, label="Right Channel")
 
 # Customize axes and grids for better aesthetics
 plt.grid(True)  # Show grid
