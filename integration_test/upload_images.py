@@ -12,6 +12,19 @@ def find_png_images(directory):
 
 directory = '.'
 png_images = find_png_images(directory)
+png_filenames = list(map(lambda s: s.split("/")[-1], png_images))
+if len(png_filenames) != len(set(png_filenames)): # duplicates
+    print("Duplicate files!")
+    from collections import defaultdict
+    indices = defaultdict(list)
+    for index, item in enumerate(png_filenames):
+        indices[item].append(index)
+    for item, index_list in indices.items():
+        if len(index_list) > 1:
+            for idx in index_list:
+                print(png_images[idx])
+    print("Aborting...")
+    exit(-1)
 
 import pyoverleaf
 api = pyoverleaf.Api()
