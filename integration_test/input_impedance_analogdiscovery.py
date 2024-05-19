@@ -85,7 +85,7 @@ ax.plot(f, df_R[y_csv_column].to_numpy()/1e3, label="Right Channel")
 
 # Customize axes and grids for better aesthetics
 plt.grid(True)  # Show grid
-plt.legend(loc='upper left')
+plt.legend(loc='best')
 
 # Use tight layout to automatically adjust subplot params
 plt.tight_layout()

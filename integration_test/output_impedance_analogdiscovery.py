@@ -112,7 +112,7 @@ ax.plot(f, zo_R, label="Right Channel")
 
 # Customize axes and grids for better aesthetics
 plt.grid(True)  # Show grid
-plt.legend(loc='upper left')
+plt.legend(loc='best')
 
 # Use tight layout to automatically adjust subplot params
 plt.tight_layout()
