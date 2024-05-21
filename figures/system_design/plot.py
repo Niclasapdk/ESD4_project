@@ -11,15 +11,15 @@ if len(sys.argv) > 1:
         save = True
 
 figs = [
-("unregulated_powersupply/unregulated_supply_rails.txt", "Unregulated Power Supply", "t"),
-("pa_stability/closed_loop_test.txt", "Closed Loop Test", "f"),
-("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
-("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
-("pa_stability/open_loop_test.txt", "Open loop test", "f"),
-("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f"),
-("auxPreAmp/ClassAPreAmp.txt", "Class A Preamp Transient Response", "t"),
-("auxPreAmp/opamp_preamp_transient.txt", "Opamp Preamp Transient Response", "t"),
-("equalizer/equaliserMax.txt", "EQ Frequency Response (max)", "f"),
+#("unregulated_powersupply/unregulated_supply_rails.txt", "Unregulated Power Supply", "t"),
+#("pa_stability/closed_loop_test.txt", "Closed Loop Test", "f"),
+#("pa_stability/closed_loop_transient.txt", "Closed Loop Transient", "t"),
+#("pa_stability/closed_loop_with_HF_comp_cap.txt", "Closed loop with HF comp cap", "f"),
+#("pa_stability/open_loop_test.txt", "Open loop test", "f"),
+#("pa_stability/open_loop_with_miller.txt", "Open loop with miller", "f"),
+#("auxPreAmp/ClassAPreAmp.txt", "Class A Preamp Transient Response", "t"),
+#("auxPreAmp/opamp_preamp_transient.txt", "Opamp Preamp Transient Response", "t"),
+#("equalizer/equaliserMax.txt", "EQ Frequency Response (max)", "f"),
 ("equalizer/equaliserMin.txt", "EQ Frequency Response (min)", "f"),
 ("volume_control/volume_control.txt","Volume Control Transient Response","ts")
 ]
@@ -131,23 +131,26 @@ def genfreq(filename, title, save=False, quiet=False):
     Adb, phase = parse_vout(df["V(out)"])
     sns.set(style="whitegrid")  # You can change the style to "darkgrid", "whitegrid", etc.
     sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
-    sns.set_palette("pastel")  # Other options: "muted", "bright", "deep", etc.
     plt.rc('font', size=14)  # Sets the default font size
     plt.rc('axes', titlesize=14)  # Font size of the axes title
     plt.rc('axes', labelsize=10)  # Font size of the x and y labels
-    fig, (ax1, ax2) = plt.subplots(nrows=2)
-    fig.suptitle(title)
-    plt.xlabel("Frequency [Hz]")
-    ax1.set_ylabel("Amplitude [dB]")
-    ax1.plot(f, Adb)
-    ax2.set_ylabel("Phase [\xb0]")
-    ax2.plot(f, phase)
-    ax1.set_xscale("log")
-    ax2.set_xscale("log")
-    ax2.set_yticks(np.arange(-180, 181, 45))
-    plt.grid(True)  # Show grid
-    plt.tight_layout()
-    fig.tight_layout()
+    plt.plot(f,phase)
+    plt.xscale("log")
+    plt.grid(True)
+    plt.yticks(np.arange(-30,30,45))
+#    fig, (ax1, ax2) = plt.subplots(nrows=2)
+#    fig.suptitle(title)
+#    plt.xlabel("Frequency [Hz]")
+#    ax1.set_ylabel("Amplitude [dB]")
+#    ax1.plot(f, Adb)
+#    ax2.set_ylabel("Phase [\xb0]")
+#    ax2.plot(f, phase)
+#    ax1.set_xscale("log")
+#    ax2.set_xscale("log")
+#    ax2.set_yticks(np.arange(-30, 30, 45))
+#    plt.grid(True)  # Show grid
+#    plt.tight_layout()
+#    fig.tight_layout()
     if save:
         plt.savefig(outfile, dpi=300)  # Save as PNG file with high DPI
     if not quiet:

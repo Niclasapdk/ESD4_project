@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-17T09:07:48.617Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="OIZMtohHLksZctZpv5tz" version="24.4.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-21T08:45:03.855Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="lZA1G4uaZx6Qml5hgI8q" version="24.4.3" type="device">
   <diagram name="Page-1" id="nUcPXitHviqEH9ucQRFm">
-    <mxGraphModel dx="715" dy="390" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="561" dy="306" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -41,7 +41,7 @@
             <mxPoint x="369.95238095238096" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hpIK_vdd18zwM_k7jbdl-6" value="Equalizer / Volume" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="hpIK_vdd18zwM_k7jbdl-6" value="Equalizer / Volume / Bandpass" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="340" y="400" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="hpIK_vdd18zwM_k7jbdl-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#76608a;strokeColor=#dc8add;" parent="1" source="hpIK_vdd18zwM_k7jbdl-8" target="hpIK_vdd18zwM_k7jbdl-5" edge="1">
@@ -71,7 +71,7 @@
             <mxPoint x="90" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vYbhxjidZYGOW-Xt2IEC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeColor=#8ff0a4;" edge="1" parent="1" source="hpIK_vdd18zwM_k7jbdl-8" target="hpIK_vdd18zwM_k7jbdl-5">
+        <mxCell id="vYbhxjidZYGOW-Xt2IEC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeColor=#8ff0a4;" parent="1" source="hpIK_vdd18zwM_k7jbdl-8" target="hpIK_vdd18zwM_k7jbdl-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="hpIK_vdd18zwM_k7jbdl-8" value="Power supply" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
